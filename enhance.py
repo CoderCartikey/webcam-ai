@@ -11,16 +11,15 @@ print(f"Using: {torch.cuda}")
 
 model = RRDBNet(num_in_ch=3, num_out_ch=3, num_feat=64, num_block=23, num_grow_ch=32, scale=4)
 
-upsampler = RealESRGNer(
+upsampler = RealESRGANer(
     scale=4,
     model_path="weights/RealESRGAN_x4plus.pth",
     model=model,
-    title=128,
-    title_pad=10,
+    tile=128,
+    tile_pad=10,
     pre_pad=0,
     half=True
 )
-
 print("Model loaded!")
 
 cap = cv2.VideoCapture(0)
@@ -30,13 +29,13 @@ while True:
     if not ret:
         break
 
-    output, _=upsampler.enchance(frame, outscale=2)
+    output, _=upsampler.enhance(frame, outscale=2)
 
     cv2.imshow('original', frame)
     cv2.imshow('Enhanced', output)
 
     if cv2.waitKey(1) == ord('q'):
         break
-    
+
 cap.release()
 cv2.destroyAllWindows()
