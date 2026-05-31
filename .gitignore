@@ -1,0 +1,6 @@
+input.mp4
+output.mp4
+*.avi
+weights/
+__pycache__/
+*.pyc
