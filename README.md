@@ -66,7 +66,11 @@ Result: your 480p video doesn't just get bigger — it gets sharper.
 
 ## Results
 
-*(before/after screenshots coming soon)*
+**Before (480p input):**
+![Before](resultsbefore.png)
+
+**After (Enhanced output):**
+![After](resultsafter.png)
 
 ## Built by
 Kartikey Bhardwaj · B.Tech CSE · DIT University · 2nd Year *(I guess passed.)*
